@@ -58,23 +58,6 @@
 
 > [附图：审查结果页面截图]
 
----
-
-## 技术架构
-
-| 层级 | 技术选型 |
-|:---|:---|
-| 后端框架 | Spring Boot 3.2.0 |
-| 语言版本 | Java 17 |
-| 文档解析 | Apache POI 5.2.5 / PDFBox 2.0.29 |
-| OCR 引擎 | Tesseract 5.x（Tess4J 5.7.0） |
-| 语法引擎 | LanguageTool 6.3 |
-| 敏感词算法 | 自研 DFA 有限状态机 |
-| 本地缓存 | Caffeine |
-| 并发框架 | CompletableFuture + 自定义线程池 |
-| 前端 | 原生 HTML5 + CSS3 + JavaScript |
-| 构建工具 | Maven Wrapper（无需预装 Maven） |
-
 
 ---
 
