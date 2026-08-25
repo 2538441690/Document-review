@@ -90,7 +90,7 @@ mvnw.cmd spring-boot:run
 
 敏感词、涉密词等词库在 `config/sensitive-words/` 目录下创建或编辑 `.txt` 文件，**一行一个词**，系统会自动监听文件变化并实时生效。
 
-### 支持的文件格式
+支持的文件格式为：
 
 | 格式 | 扩展名 | 大小限制 |
 |:---|:---|:---|
@@ -100,72 +100,3 @@ mvnw.cmd spring-boot:run
 | 图片 | .png .jpg .jpeg .bmp | 50MB |
 
 ---
-
-## 项目结构
-
-```
-wzx/
-├── pom.xml                              # Maven 项目配置
-├── mvnw.cmd                             # Maven Wrapper (Windows)
-├── .gitignore
-├── config/
-│   ├── sensitive-words/                 # 敏感词库（热加载）
-│   │   ├── 涉密词.txt
-│   │   └── 敏感词.txt
-│   └── tessdata/                        # Tesseract OCR 语言包
-│       ├── chi_sim.traineddata
-│       └── eng.traineddata
-├── src/main/java/com/example/compliance/
-│   ├── ComplianceApplication.java       # 启动入口
-│   ├── config/
-│   │   └── ThreadPoolConfig.java        # 线程池配置
-│   ├── controller/
-│   │   └── DocumentController.java      # 审查接口控制器
-│   ├── dto/
-│   │   └── ValidationResponse.java      # 响应 DTO
-│   ├── entity/
-│   │   ├── ReviewIssue.java             # 合规问题实体
-│   │   ├── ValidationResult.java        # 审查结果实体
-│   │   ├── ImageInfo.java               # 图片信息实体
-│   │   └── TableInfo.java               # 表格信息实体
-│   ├── service/
-│   │   ├── TextSecurityService.java     # 敏感词检测服务
-│   │   ├── GrammarService.java          # 语法检查服务
-│   │   ├── TextFormatService.java       # 文本格式校验服务
-│   │   ├── TableFormatService.java      # 表格格式校验服务
-│   │   └── ImageComplianceService.java  # 图片合规 + OCR 服务
-│   └── util/
-│       ├── DFAFilter.java               # DFA 敏感词过滤引擎
-│       ├── WordParser.java              # Word 文档解析器
-│       ├── PDFParser.java               # PDF 文档解析器
-│       ├── ImageParser.java             # 图片元数据解析器
-│       └── OCRUtil.java                 # Tesseract OCR 封装
-└── src/main/resources/
-    ├── application.yml                  # 应用配置
-    └── static/
-        ├── index.html                   # 前端主页面
-        ├── css/style.css                # 样式
-        └── js/app.js                    # 前端逻辑
-```
-
----
-
-## 常见问题
-
-**Q: 启动时报 Tesseract OCR 初始化失败？**
-
-A: 检查 `config/tessdata/` 目录下是否存在 `chi_sim.traineddata` 和 `eng.traineddata`。如缺失，请从 [tesseract-ocr/tessdata_fast](https://github.com/tesseract-ocr/tessdata_fast) 下载。
-
-**Q: 图片审查结果总是"没有问题"？**
-
-A: 确认 OCR 初始化成功（查看启动日志），并检查 `config/sensitive-words/` 中是否包含要检测的敏感词。
-
-**Q: 如何修改审查规则？**
-
-A: 编辑 `src/main/resources/application.yml` 中 `compliance` 下的参数，重启服务生效。
-
----
-
-## 许可证
-
-仅供学习和内部使用。
