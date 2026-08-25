@@ -6,8 +6,7 @@
 
 **核心特点：所有算法和模型均在本地运行，不依赖任何外部 API 或网络服务，适用于涉密与内网环境。**
 
-> [<img width="1880" height="938" alt="image" src="https://github.com/user-attachments/assets/934045df-39a0-4376-a7ee-b45cf93a8962" />
-]
+<img width="1880" height="938" alt="image" src="https://github.com/user-attachments/assets/934045df-39a0-4376-a7ee-b45cf93a8962" />
 
 ---
 
