@@ -88,7 +88,8 @@ cd your-repo
 mvnw.cmd spring-boot:run
 ```
 
-> [附图：启动成功终端截图]
+<img width="1808" height="812" alt="image" src="https://github.com/user-attachments/assets/01aff6fe-43d9-47b6-ac81-efc0d8553447" />
+
 
 启动完成后访问 **http://localhost:8080** 即可使用。
 
