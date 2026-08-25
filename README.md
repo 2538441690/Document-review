@@ -86,37 +86,7 @@ mvnw.cmd spring-boot:run
 
 ### 配置说明
 
-审查规则通过 `src/main/resources/application.yml` 配置，按需修改后重启生效：
-
-```yaml
-compliance:
-  # 文本格式规范
-  format:
-    font-name: 宋体              # 字体要求
-    font-size-min: 10.5          # 最小字号 (pt)
-    font-size-max: 16.0          # 最大字号 (pt)
-    line-spacing-min: 1.15       # 最小行距 (倍)
-    line-spacing-max: 1.5        # 最大行距 (倍)
-    margin-top-mm: 25.4          # 上边距 (mm)
-    margin-bottom-mm: 25.4       # 下边距 (mm)
-    margin-left-mm: 31.7         # 左边距 (mm)
-    margin-right-mm: 31.7        # 右边距 (mm)
-    margin-tolerance-mm: 2.0     # 边距容差 (mm)
-
-  # 图片格式规范
-  image:
-    allowed-formats: PNG,JPEG,JPG,BMP
-    min-width: 200
-    min-height: 200
-    min-dpi: 150
-    max-size-mb: 10
-
-  # 表格格式规范
-  table:
-    require-header: true
-    require-consistent-columns: true
-    max-columns: 50
-```
+格式规范通过 `src/main/resources/application.yml` 配置，按需修改后重启生效。
 
 ### 自定义敏感词库
 
