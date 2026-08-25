@@ -88,17 +88,7 @@ mvnw.cmd spring-boot:run
 
 格式规范通过 `src/main/resources/application.yml` 配置，按需修改后重启生效。
 
-### 自定义敏感词库
-
-在 `config/sensitive-words/` 目录下创建或编辑 `.txt` 文件，**一行一个词**，系统会自动监听文件变化并实时生效：
-
-```
-config/sensitive-words/
-├── 涉密词.txt
-└── 敏感词.txt
-```
-
-> [附图：敏感词库文件编辑截图]
+敏感词、涉密词等词库在 `config/sensitive-words/` 目录下创建或编辑 `.txt` 文件，**一行一个词**，系统会自动监听文件变化并实时生效。
 
 ### 支持的文件格式
 
