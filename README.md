@@ -73,7 +73,7 @@
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/2538441690/Document-review.git
 cd your-repo
 
 # 2. 启动服务（首次运行会自动下载 Maven 及依赖）
