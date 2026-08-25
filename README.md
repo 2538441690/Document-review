@@ -1,4 +1,4 @@
-# Document-review
+<img width="1151" height="715" alt="image" src="https://github.com/user-attachments/assets/7d44c41e-e02b-4586-aba2-2a40119fa307" /># Document-review
 
 ## 一、项目概述
 
@@ -56,7 +56,13 @@
 - 提取结果自动送入 DFA 敏感词引擎二次检测
 - 支持中英文混合识别
 
-> [附图：审查结果页面截图]
+<img width="1151" height="707" alt="image" src="https://github.com/user-attachments/assets/b58f02f5-f8ac-4e96-97f6-29c99e131173" />
+<img width="1149" height="904" alt="image" src="https://github.com/user-attachments/assets/e2d1f397-976b-4654-965e-6a8c92745e73" />
+<img width="1148" height="814" alt="image" src="https://github.com/user-attachments/assets/bc7be360-bb4a-4f63-a444-0a96fa604368" />
+<img width="1151" height="715" alt="image" src="https://github.com/user-attachments/assets/25f5b22e-b70b-4184-8155-04536efe31c1" />
+<img width="1154" height="917" alt="image" src="https://github.com/user-attachments/assets/e10907d8-0c68-4f72-bf7c-71351e0d7df4" />
+
+
 
 
 ---
