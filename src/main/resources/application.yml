@@ -1,0 +1,72 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: 企业级智能文档安全合规审查系统
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  thymeleaf:
+    cache: false
+
+# 合规审查配置
+compliance:
+  # 敏感词库目录（相对于项目根目录，或绝对路径）
+  sensitive-word-dir: config/sensitive-words
+
+  # 文本格式规范
+  format:
+    font-name: 宋体
+    font-size-min: 10.5
+    font-size-max: 16.0
+    line-spacing-min: 1.15
+    line-spacing-max: 1.5
+    margin-top-mm: 25.4
+    margin-bottom-mm: 25.4
+    margin-left-mm: 31.7
+    margin-right-mm: 31.7
+    margin-tolerance-mm: 2.0
+
+  # 图片格式规范
+  image:
+    allowed-formats: PNG,JPEG,JPG,BMP
+    min-width: 200
+    min-height: 200
+    min-dpi: 150
+    max-size-mb: 10
+
+  # 表格格式规范
+  table:
+    require-header: true
+    require-consistent-columns: true
+    max-columns: 50
+
+  # Tesseract OCR 配置
+  tesseract:
+    data-path: config/tessdata
+    language: chi_sim+eng
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.example.compliance: DEBUG
+    org.kie: WARN
+  file:
+    name: logs/compliance.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 30
+
+# Actuator 配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

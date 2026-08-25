@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业级智能文档安全合规审查系统</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>智能文档安全合规审查系统</h1>
+            <p class="subtitle">纯离线运行 · 数据本地闭环 · 全方位合规审查</p>
+            <div class="status-bar">
+                <span id="healthStatus" class="status-dot checking"></span>
+                <span id="healthText">检测中...</span>
+            </div>
+        </header>
+
+        <!-- 上传区域 -->
+        <section class="upload-section">
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon">
+                    <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 16V4m0 0L8 8m4-4l4 4"/>
+                        <path d="M20 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2"/>
+                    </svg>
+                </div>
+                <p class="upload-text">拖拽文件到此处，或 <span class="browse-link">点击浏览</span></p>
+                <p class="upload-hint">支持 .docx .xlsx .pdf .png .jpg .jpeg .bmp .gif .tiff</p>
+                <input type="file" id="fileInput" hidden
+                       accept=".docx,.doc,.xlsx,.xls,.pdf,.png,.jpg,.jpeg,.bmp,.gif,.tiff">
+                <div class="file-types">
+                    <span class="type-tag word">Word</span>
+                    <span class="type-tag excel">Excel</span>
+                    <span class="type-tag pdf">PDF</span>
+                    <span class="type-tag image">图片</span>
+                </div>
+            </div>
+
+            <!-- 上传进度 -->
+            <div class="upload-progress" id="uploadProgress" style="display:none">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">正在上传...</p>
+            </div>
+
+            <!-- 已选文件 -->
+            <div class="selected-file" id="selectedFile" style="display:none">
+                <span class="file-icon" id="fileIcon"></span>
+                <span class="file-name" id="selectedFileName"></span>
+                <span class="file-size" id="selectedFileSize"></span>
+                <button class="btn-remove" id="btnRemove" title="移除">×</button>
+            </div>
+
+            <div class="upload-actions">
+                <button class="btn btn-primary" id="btnUpload" disabled>开始审查</button>
+                <button class="btn btn-secondary" id="btnClear">清空</button>
+            </div>
+        </section>
+
+        <!-- 审查结果 -->
+        <section class="result-section" id="resultSection" style="display:none">
+            <!-- 概要卡片 -->
+            <div class="summary-cards">
+                <div class="summary-card" id="cardDuration">
+                    <div class="card-value" id="valDuration">0ms</div>
+                    <div class="card-label">审查耗时</div>
+                </div>
+                <div class="summary-card total">
+                    <div class="card-value" id="valTotal">0</div>
+                    <div class="card-label">问题总数</div>
+                </div>
+                <div class="summary-card error">
+                    <div class="card-value" id="valErrors">0</div>
+                    <div class="card-label">错误</div>
+                </div>
+                <div class="summary-card warning">
+                    <div class="card-value" id="valWarnings">0</div>
+                    <div class="card-label">警告</div>
+                </div>
+                <div class="summary-card info">
+                    <div class="card-value" id="valInfos">0</div>
+                    <div class="card-label">提示</div>
+                </div>
+            </div>
+
+            <!-- 结论 -->
+            <div class="verdict" id="verdict">
+                <span class="verdict-icon" id="verdictIcon"></span>
+                <span class="verdict-text" id="verdictText"></span>
+            </div>
+
+            <!-- 问题列表 -->
+            <div class="issues-header">
+                <h2>详细问题列表</h2>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">全部</button>
+                    <button class="filter-tab" data-filter="ERROR">错误</button>
+                    <button class="filter-tab" data-filter="WARNING">警告</button>
+                    <button class="filter-tab" data-filter="INFO">提示</button>
+                </div>
+            </div>
+            <div class="issues-list" id="issuesList"></div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>所有算法和模型均在本地运行，数据不出本机</p>
+        </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
