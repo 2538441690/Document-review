@@ -21,7 +21,7 @@
 | 文本格式 | ✅ | — | — | — | Apache POI |
 | 表格格式 | ✅ | ✅ | — | — | Apache POI |
 | 图片格式 | — | — | — | ✅ | ImageIO 元数据 |
-| 图片 OCR | ✅ | — | — | ✅ | Tesseract + Tess4J |
+| 图片 OCR | ✅ | — | ✅ | ✅ | Tesseract + Tess4J |
 
 ### 详细说明
 
